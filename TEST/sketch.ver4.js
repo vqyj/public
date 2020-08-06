@@ -27,7 +27,7 @@ function setup() {
   function changeParaHtml() {
     vig = vigenere(textBox.value(), pw.value(), status);
 
-
+    alert("hey")
     para.html(vig);
   }
 }
