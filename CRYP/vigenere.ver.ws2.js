@@ -1,1 +1,8 @@
-function vigenere(e,t,l){let r=e,n=t,f=[],g=[];for(let e=0;e<r.length;e++)f[e]=r[e];for(let e=0;e<n.length;e++)g[e]=n[e];let o=[" ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],h=[],i=[];for(let e=0;e<r.length;e++)for(let t=0;t<27;t++)if(f[e]==o[t]){h[e]=t;break}for(let e=0;e<n.length;e++)for(let t=0;t<27;t++)if(g[e]==o[t]){i[e]=t;break}let a=[];for(let e=0;e<r.length;e++)0==l?a[e]=(h[e]+i[e%i.length])%27:1==l&&(a[e]=(h[e]-i[e%i.length])%27,a[e]<0&&(a[e]=27+a[e]));let b=[];for(let e=0;e<r.length;e++)a[e]<27?b[e]=o[a[e]]:b[e]=f[e];let k="";for(let e=0;e<r.length;e++)k+=b[e];return k}
+function vigenere(input,key,eOrD){let text=input;let password=key;let sepInput=[];let sepPassword=[];for(let i=0;i<text.length;i++){sepInput[i]=text[i]}
+for(let i=0;i<password.length;i++){sepPassword[i]=password[i]}
+let letters=[" ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];let inputNum=[];let passwordNum=[];for(let i=0;i<text.length;i++){for(let j=0;j<27;j++){if(sepInput[i]==letters[j]){inputNum[i]=j;break}}}
+for(let i=0;i<password.length;i++){for(let j=0;j<27;j++){if(sepPassword[i]==letters[j]){passwordNum[i]=j;break}}}
+let adjInputNum=[];for(let i=0;i<text.length;i++){if(eOrD==0){adjInputNum[i]=(inputNum[i]+passwordNum[i%passwordNum.length])%27}else if(eOrD==1){adjInputNum[i]=(inputNum[i]-passwordNum[i%passwordNum.length])%27;if(adjInputNum[i]<0){adjInputNum[i]=27+adjInputNum[i]}}}
+let charsInputAgain=[];for(let i=0;i<text.length;i++){if(adjInputNum[i]<27){charsInputAgain[i]=letters[adjInputNum[i]]}else{charsInputAgain[i]=sepInput[i]}}
+let output="";for(let i=0;i<text.length;i++){output+=charsInputAgain[i]}
+return output}
