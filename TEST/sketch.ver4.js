@@ -19,7 +19,7 @@ function setup() {
   let pw = select("#pw")
   textBox.input(changeParaHtml);
   pw.input(changeParaHtml);
-  let para = select('#para')
+  let para = select("#para")
 
 
   function changeParaHtml() {
