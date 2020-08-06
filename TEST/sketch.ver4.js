@@ -18,13 +18,13 @@ function setup() {
   let textBox = select("#input")
   let pw = select("#pw")
 
-  pw.input(changeParaHtml);
+  pw.input(change);
   let para = select("#para")
   
    para.html("hi");
 
 
-  function changeParaHtml() {
+  function change() {
     vig = vigenere(textBox.value(), pw.value(), status);
 
     alert("hey")
