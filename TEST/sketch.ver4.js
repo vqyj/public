@@ -17,9 +17,11 @@ function setup() {
   }
   let textBox = select("#input")
   let pw = select("#pw")
-  para.html("hi");
+
   pw.input(changeParaHtml);
   let para = select("#para")
+  
+   para.html("hi");
 
 
   function changeParaHtml() {
